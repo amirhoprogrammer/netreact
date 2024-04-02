@@ -3,8 +3,12 @@ const Navbar = () => {
         <nav className="navbar">
             <h1>The amirblog </h1>
             <div className="links">
-                <a href="/">Home </a>
-                <a href="/create">New Blog</a>
+                <a href="/" style={{
+                    fontSize : "15px"
+                }}>Home </a>
+                <a href="/create" style={{
+                    fontSize : "15px"
+                }}>New Blog</a>
             </div>
         </nav>
     );
