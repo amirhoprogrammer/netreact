@@ -20,7 +20,7 @@ function App() {
         {/*<p>{ 10 }</p>*/}
         {/*<p>{ "hello,liverpool" }</p>*/}
         {/*<p>{["persepolis ", " liverpool ", 1, 2]}</p>*/}
-        <p>{Math.random() * 20}</p>
+        <p>{/*Math.random() * 20*/}</p>
         
         <a href={link}>forooshmobile</a>
       </div>
