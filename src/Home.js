@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Bloglist from "./Bloglist";
 const Home = () => {
     //let name = 'amin';
     const [blogs, setBlogs] = useState([
@@ -27,12 +28,7 @@ const Home = () => {
             <button onClick={() => {
                 handleClickAgain('amirhossein')    
             }}>Click Me again</button>
-            {blogs.map((blog) => (
-                <div className="blog-preview" key={blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>writen by {blog.author}</p>
-                </div>
-            ))}
+            <Bloglist blogs={blogs} />
         </div>
     );
 }
