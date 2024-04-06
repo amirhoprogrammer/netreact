@@ -28,7 +28,7 @@ const Home = () => {
             <button onClick={() => {
                 handleClickAgain('amirhossein')    
             }}>Click Me again</button>
-            <Bloglist blogs={blogs} />
+            <Bloglist blogs={blogs} title="All blogs" />
         </div>
     );
 }

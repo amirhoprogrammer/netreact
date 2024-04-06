@@ -1,7 +1,8 @@
 /*import { useState } from "react";*/
-const Bloglist = (props) => {
-    const blogs = props.blogs;
-    console.log(props, blogs);
+const Bloglist = ({ blogs,title }) => {
+    /*const blogs = props.blogs;
+    const title = props.title;*/
+    /*console.log(props, blogs);*/
     /*const [blogs, setBlogs] = useState([
         { title: 'my new website', body: 'lorem..', author: 'amir', id: 1 },
         { title: 'welcome bro', body: 'lorem..', author: 'ali', id: 2 },
@@ -9,6 +10,7 @@ const Bloglist = (props) => {
     ]);*/
     return ( 
         <div className="blog-list">
+            <h2>{ title }</h2>
             {blogs.map((blog) => (
                 <div className="blog-preview" key={blog.id}>
                     <h2>{blog.title}</h2>
