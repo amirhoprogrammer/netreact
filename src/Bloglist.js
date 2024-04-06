@@ -1,5 +1,5 @@
 /*import { useState } from "react";*/
-const Bloglist = ({ blogs,title }) => {
+const Bloglist = ({ blogs,title,handleDelete }) => {
     /*const blogs = props.blogs;
     const title = props.title;*/
     /*console.log(props, blogs);*/
@@ -8,6 +8,7 @@ const Bloglist = ({ blogs,title }) => {
         { title: 'welcome bro', body: 'lorem..', author: 'ali', id: 2 },
         { title: 'hey gange', body: 'lorem..', author: 'armin', id: 3 },
     ]);*/
+    
     return ( 
         <div className="blog-list">
             <h2>{ title }</h2>
@@ -15,6 +16,7 @@ const Bloglist = ({ blogs,title }) => {
                 <div className="blog-preview" key={blog.id}>
                     <h2>{blog.title}</h2>
                     <p>writen by {blog.author}</p>
+                    <button onClick={() => handleDelete(blog.id)}>delete blogs</button>
                 </div>
             ))}
         </div>

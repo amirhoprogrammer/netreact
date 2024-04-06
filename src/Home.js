@@ -7,6 +7,10 @@ const Home = () => {
         { title: 'welcome bro', body: 'lorem..', author: 'ali', id: 2 },
         { title: 'hey gange', body: 'lorem..', author: 'armin', id: 3 },
     ]);
+    const handleDelete = (id) => {
+        const newBlogs = blogs.filter(blog => blog.id !== id)
+        setBlogs(newBlogs);
+    }
     const [name, setName] = useState('ali');
     const handleClick1 = () => {
         setName('osanloo')
@@ -29,6 +33,8 @@ const Home = () => {
                 handleClickAgain('amirhossein')    
             }}>Click Me again</button>
             <Bloglist blogs={blogs} title="All blogs" />
+            {/*<Bloglist blogs={blogs} title="ali's Blog" />*/}
+            <Bloglist blogs={blogs.filter((blog) => blog.author === 'ali')} title="ali's Blog" />
         </div>
     );
 }
