@@ -9,6 +9,7 @@ const Bloglist = ({ blogs,title,handleDelete }) => {
         { title: 'hey gange', body: 'lorem..', author: 'armin', id: 3 },
     ]);*/
     
+    
     return ( 
         <div className="blog-list">
             <h2>{ title }</h2>
