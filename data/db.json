@@ -1,0 +1,16 @@
+{
+    "blogs":[
+        {
+            "title": "my new website", 
+            "body": "it is for resume of me",
+            "author": "amir", 
+            "id": 1
+        },
+        {
+            "title": "opening json", 
+            "body": "it is fake rest api \n for requesting to database",
+            "author": "amirhossein", 
+            "id": 2
+        }
+    ]
+}
