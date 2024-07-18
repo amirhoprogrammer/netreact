@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Bloglist from "./Bloglist";
 const Home = () => {
     //let name = 'amin';
@@ -23,6 +23,12 @@ const Home = () => {
     const handleClickAgain = (name) => {
         alert('hello ' + name);
     };
+
+    useEffect(() => {
+        console.log("ali hassan ra balid");
+        console.log(blogs);
+    })
+
     return (
         <div className="home">
             <h2>HomePage</h2>
