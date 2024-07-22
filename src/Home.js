@@ -3,9 +3,9 @@ import Bloglist from "./Bloglist";
 const Home = () => {
     //let name = 'amin';
     const [blogs, setBlogs] = useState([
-        { title: 'my new website', body: 'lorem..', author: 'amir', id: 1 },
+        /*{ title: 'my new website', body: 'lorem..', author: 'amir', id: 1 },
         { title: 'welcome bro', body: 'lorem..', author: 'ali', id: 2 },
-        { title: 'hey gange', body: 'lorem..', author: 'armin', id: 3 },
+        { title: 'hey gange', body: 'lorem..', author: 'armin', id: 3 }*/,null
     ]);
     const handleDelete = (id) => {
         const newBlogs = blogs.filter(blog => blog.id !== id)
@@ -16,18 +16,26 @@ const Home = () => {
         setName('osanloo')
     };
 
-    /*const handleClick = () => {
+    const handleClick = () => {
         alert('hello', 'liverpool');
-    }*/
+    }
 
     const handleClickAgain = (name) => {
         alert('hello ' + name);
     };
 
     useEffect(() => {
-        console.log("ali hassan ra balid");
-        console.log(blogs);
-    })
+        /*console.log("ali hassan ra balid");
+        console.log(blogs);*/
+        fetch('http://localhost:8000/blogs')
+            .then(res => {
+               return res.json()
+            })
+            .then(data => {
+                /*console.log(data);*/
+                setBlogs(data);
+            })
+    } , [])
 
     return (
         <div className="home">
@@ -38,10 +46,10 @@ const Home = () => {
             <button onClick={() => {
                 handleClickAgain('amirhossein')    
             }}>Click Me again</button>
-            <Bloglist blogs={blogs} title="All blogs" />
+            {/*<Bloglist blogs={blogs} title="All blogs" />*/}
             {/*<Bloglist blogs={blogs} title="ali's Blog" />*/}
             {/*<Bloglist blogs={blogs.filter((blog) => blog.author === 'ali')} title="ali's Blog"  />*/}
-            <Bloglist blogs={blogs} title="All Blogs" handleDelete={handleDelete} />
+            {blogs!=null && <Bloglist blogs={blogs} title="All Blogs" handleDelete={handleDelete} />}            
         </div>
     );
 }
