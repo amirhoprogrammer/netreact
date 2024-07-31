@@ -1,12 +1,17 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 const Bloglist = ({ blogs }) => {
     
     return ( 
         <div className="blog-list">
             <h2>All blogs</h2>
             {blogs.map((blog) => (
+                
                 <div className="blog-preview" key={blog.id}>
-                    <h2>{blog.title}</h2>
-                    <p>writen by {blog.author}</p>  
+                    <Link to={`/blogs/${blog.id}`}>
+                        <h2>{blog.title}</h2>
+                        <p>writen by {blog.author}</p> 
+                    </Link> 
                 </div>
             ))}
         </div>
