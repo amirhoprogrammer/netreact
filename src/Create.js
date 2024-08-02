@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('amir');
-  const [isPending, setIsPending] = useState('false');
+  const [isPending, setIsPending] = useState(false);
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +22,11 @@ const Create = () => {
     }).then(() => {
       console.log('new blog added');
       setIsPending(false);
+      //history.go(-1);
+      history.push('/');
     })
+
+    
   }
 
   return (
@@ -51,7 +57,8 @@ const Create = () => {
           <option value="amir">amir</option>
           <option value="amirhossein">amirhossein</option>
         </select>
-        { isPending && <button>Add Blogs</button>}
+        { !isPending && <button>Add Blogs</button>}
+        { isPending && <button disabled>Adding Blog....</button>}
         {/*<p>{ title }</p>
         <p>{ body }</p>
         <p>{ author }</p>*/}
